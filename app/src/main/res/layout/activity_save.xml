@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rel_process"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/topBar"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/lin_ads"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingVertical="16dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="260dp"
+                android:layout_height="260dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/ic_video_creator"
+                app:lottie_repeatMode="restart" />
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvSubMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/app_name"
+                android:textColor="@color/secondary"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_ads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/black" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rel_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/topBar"
+        android:orientation="vertical"
+        android:paddingVertical="10dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="@color/theme_bg"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txVelocidade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="SPEED"
+                        android:textColor="@color/text_theme"
+                        android:textStyle="bold" />
+
+                    <SeekBar
+                        android:id="@+id/seekTempoSave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="16dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="8dp"
+                        android:progress="0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txTempoLento"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Slow"
+                            android:textColor="@color/text_theme"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/color_dialog_hint_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:text="Fast"
+                            android:textColor="@color/text_theme"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/theme_bg"
+                        android:gravity="center"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/txTempoSave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text="2"
+                            android:textAlignment="center"
+                            android:textColor="@color/secondary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="10dp"
+                            android:text="/ Sec"
+                            android:textAlignment="center"
+                            android:textColor="@color/text_theme"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="@color/theme_bg"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txResolucao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Resolution"
+                        android:textColor="@color/text_theme"
+                        android:textStyle="bold" />
+
+                    <SeekBar
+                        android:id="@+id/seekResolucaoSave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="10000"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="16dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="8dp"
+                        android:progress="0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=""
+                            android:textColor="@color/text_theme"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txTamanhoIdeal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:text="Ideal"
+                            android:textColor="@color/text_theme"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txResolucaoSave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:background="@color/theme_bg"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="2dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="5dp"
+                            android:text="1280"
+                            android:textAlignment="center"
+                            android:textColor="@color/secondary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:elevation="5dp"
+                    android:layout_marginRight="8dp"
+                    app:cardBackgroundColor="@color/theme_bg"
+                    app:cardCornerRadius="5dp">
+                <Button
+                    android:id="@+id/btSalvar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/theme_bg"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="8dp"
+                    app:cardBackgroundColor="@color/theme_bg"
+                    app:cardCornerRadius="5dp">
+                <Button
+                    android:id="@+id/btClose"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/theme_bg"
+                    android:text="Cancel"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

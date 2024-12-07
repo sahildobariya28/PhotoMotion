@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E25"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="Photo "
+                android:textColor="#3071FE"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="Motion"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnSetting"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="5dp"
+            android:padding="5dp"
+            android:src="@drawable/setting"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="45dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardCornerRadius="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                        android:id="@+id/carousel"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        app:autoPlay="true"
+                        app:autoPlayDelay="5000"
+                        app:carouselType="BLOCK"
+                        app:infiniteCarousel="true" />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="25dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtSize1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:includeFontPadding="false"
+                            android:text="Perfect "
+                            android:textColor="#3071FE"
+                            android:textSize="22dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+                        <TextView
+                            android:id="@+id/txtSize2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:includeFontPadding="false"
+                            android:text="Size"
+                            android:textColor="@color/white"
+                            android:textSize="22dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="8dp"
+                        android:src="@drawable/btn_next" />
+
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/tab_bar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/btnFit"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="4dp"
+                            android:background="@drawable/crop_size_bg"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_1"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="Fit"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btnSquare"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="4dp"
+                            android:background="@drawable/crop_size_bg"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_2"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="Square"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btn3_4"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="4dp"
+                            android:background="@drawable/crop_size_bg"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_3"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="3:4"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btn4_3"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="4dp"
+                            android:background="@drawable/crop_size_bg"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:rotation="90"
+                                android:src="@drawable/ic_3"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="4:3"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btn9_16"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="4dp"
+                            android:background="@drawable/crop_size_bg"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_5"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="9:16"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btn16_9"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="4dp"
+                            android:background="@drawable/crop_size_bg"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_6"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="16:9"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btn7_5"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="4dp"
+                            android:background="@drawable/crop_size_bg"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_7"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="7:5"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btnFree"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="4dp"
+                            android:background="@drawable/crop_size_bg"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_8"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="Free"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btnCircle"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="4dp"
+                            android:background="@drawable/crop_size_bg"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_9"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="Circle"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/btnCirSquare"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="4dp"
+                            android:background="@drawable/crop_size_bg"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_10"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="CirSquare"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="25dp"
+                    android:visibility="gone"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtFilter1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:includeFontPadding="false"
+                            android:text="Best "
+                            android:textColor="#3071FE"
+                            android:textSize="22dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+                        <TextView
+                            android:id="@+id/txtFilter2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:includeFontPadding="false"
+                            android:text="Filters"
+                            android:textColor="@color/white"
+                            android:textSize="22dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="8dp"
+                        android:src="@drawable/btn_next" />
+
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclEffect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/filter_item_image" />
+
+            </LinearLayout>
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/btnMyCreation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/img_download_unselected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download"
+                android:textColor="#7E858C"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout9"
+            app:layout_constraintStart_toEndOf="@+id/btnMyCreation"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout9"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout7"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/img_profile_unselected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="#7E858C"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/btnGallery"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/img_photo_motion"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Photo Motion"
+        android:textColor="#3071FF"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnGallery"
+        app:layout_constraintStart_toStartOf="@+id/btnGallery"
+        app:layout_constraintTop_toBottomOf="@+id/btnGallery" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

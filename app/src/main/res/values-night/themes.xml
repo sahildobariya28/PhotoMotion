@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="Base.Theme.PhotoMotionPro" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/theme_bg</item>
+        <item name="android:statusBarColor">@color/topBar</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/topBar</item>
+    </style>
+
+</resources>

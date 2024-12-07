@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1059334484708",
+    "project_id": "photomotion-564e2",
+    "storage_bucket": "photomotion-564e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059334484708:android:c65e5ca8858f67eb6d32f1",
+        "android_client_info": {
+          "package_name": "photo.photomotion.motion.photomotionlivewallpaper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-AiLa7E2b9sQhOaoR9ONaRCLai_AwgNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

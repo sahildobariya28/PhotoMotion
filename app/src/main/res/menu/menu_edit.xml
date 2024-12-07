@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_rotate_left_black_24dp"
+        android:id="@+id/action_undo"
+        android:title="Undo"
+        android:titleCondensed="Undo"
+        app:showAsAction="always" />
+    <item
+        android:icon="@drawable/ic_rotate_right_black_24dp"
+        android:id="@+id/action_redo"
+        android:title="Redo"
+        android:titleCondensed="Redo"
+        app:showAsAction="always" />
+    <item
+        android:icon="@drawable/detalhes_inativo"
+        android:id="@+id/action_detalhes"
+        android:title="Details"
+        android:titleCondensed="Details"
+        android:checkable="true"
+        app:showAsAction="always" />
+    <item
+        android:icon="@drawable/ic_done_black_24dp"
+        android:id="@+id/action_save"
+        android:title="Save/Export Video"
+        android:titleCondensed="Save/Export Video"
+        app:showAsAction="always" />
+</menu>

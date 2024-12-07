@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/menuBar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/topBar" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/edit_rl_main"
+            android:background="@color/theme_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/linearVertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutViews"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:id="@+id/subToolSpeedPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/topBar"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingHorizontal="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/txFastSpeed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="Fast"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <SeekBar
+                            android:id="@+id/seekTimeSpeed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:colorAccent="@color/theme"
+                            android:colorControlNormal="@color/text_white"
+                            android:fontFamily="serif"
+                            android:max="100"
+                            android:progress="20" />
+                        <TextView
+                            android:id="@+id/txSlowSpeed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:text="Slow"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/subToolSpeedPreview">
+
+                        <photo.photomotion.motion.photomotionlivewallpaper.customView.ZoomImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="1.0" />
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/rl_effects_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <photo.photomotion.motion.photomotionlivewallpaper.customView.CustomAnimationView
+                                android:id="@+id/customView"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_centerInParent="true"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/gifView"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_centerInParent="true"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:lottie_autoPlay="true"
+                                app:lottie_loop="true" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:id="@+id/detailsTop"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_below="@+id/subToolSpeedPreview"
+                        android:layout_alignParentStart="true"
+                        android:layout_margin="5dp"
+                        android:scaleType="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/subToolSpeedPreview"
+                        app:srcCompat="@android:color/transparent" />
+
+                    <ImageView
+                        android:id="@+id/detailsLow"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignTop="@+id/btDelete"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/btDelete"
+                        app:srcCompat="@android:color/transparent" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btDelete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_delete2"
+                        app:backgroundTint="@color/topBar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:tint="@color/white">
+
+
+                    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+                    <photo.photomotion.motion.photomotionlivewallpaper.customView.LupaImageView
+                        android:id="@+id/imageZoom"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/toolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/rl_effects"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/topBar"
+                        app:layout_constraintBottom_toTopOf="@+id/layoutToolsPrinc1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcv_effects"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:padding="5dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/subToolTamMask"
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/topBar"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toTopOf="@+id/layoutToolsPrinc1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/txSmallerMask"
+                            android:layout_width="?android:attr/actionBarSize"
+                            android:layout_height="?android:attr/actionBarSize"
+                            android:padding="15dp"
+                            android:src="@drawable/ic_menu_decrese"
+                            app:tint="@color/white" />
+
+                        <SeekBar
+                            android:id="@+id/seekBrushSize"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:max="100"
+                            android:progress="20" />
+
+                        <ImageView
+                            android:id="@+id/txMascaraMaior"
+                            android:layout_width="?android:attr/actionBarSize"
+                            android:layout_height="?android:attr/actionBarSize"
+                            android:padding="15dp"
+                            android:src="@drawable/ic_menu_increse"
+                            app:tint="@color/white" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutToolsPrinc1"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@color/topBar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/btPlayPause"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/secondary"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/ibPlayPause"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:adjustViewBounds="true"
+                                android:padding="5dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_menu_play" />
+
+                        </LinearLayout>
+
+                        <HorizontalScrollView
+                            android:id="@+id/horizontalScrollView"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/topBar"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/btnMotion"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp">
+
+                                    <ImageView
+                                        android:id="@+id/btMovimento"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_menu_motion"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:id="@+id/txMovimento"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Motion"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/btnSequence"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp">
+
+                                    <ImageView
+                                        android:id="@+id/btMovSequence"
+                                        android:layout_width="30dp"
+                                        android:layout_height="wrap_content"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_menu_sequence"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:id="@+id/txSequencia"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Sequence"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/btnStabilize"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp">
+
+                                    <ImageView
+                                        android:id="@+id/btEstabilizar"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_menu_stabilize"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:id="@+id/txEstabilizar"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Stabilize"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/btnMask"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp">
+
+                                    <ImageView
+                                        android:id="@+id/btMask"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_menu_mask"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:id="@+id/txMask"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mask"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/btnSelect"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp">
+
+                                    <ImageView
+                                        android:id="@+id/btSelect"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_menu_select"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:id="@+id/txSelect"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Select"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/btnErase"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp">
+
+                                    <ImageView
+                                        android:id="@+id/btApagarMascara"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_menu_erase"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:id="@+id/txApagar"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Erase"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/btnEffect"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp">
+
+                                    <ImageView
+                                        android:id="@+id/btEffect"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_menu_effect"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:id="@+id/txEffect"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="EFFECT"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/btnSticker"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp">
+
+                                    <ImageView
+                                        android:id="@+id/btSticker"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_menu_sticker"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:id="@+id/txSticker"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="STICKER"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
+                        <ImageView
+                            android:id="@+id/btnNext"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:adjustViewBounds="true"
+                            android:background="@color/secondary"
+                            android:padding="3dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_next" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutToolsPrinc2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="5dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/btZoom"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/rounderbutton_border"
+                            android:padding="10dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/tool_zoom"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txZoom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Zoom"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <LinearLayout
+        android:id="@+id/transparentLayout"
+        android:background="@color/transparent"
+        android:visibility="gone"
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

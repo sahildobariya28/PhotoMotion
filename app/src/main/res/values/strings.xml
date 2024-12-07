@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Photo Motion Pro</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="set_live_wall_target_title"></string>
+    <string name="set_live_wall_target_msg">Click here to set your creation as your mobile screen Photo Motion</string>
+
+    <string name="language">Language</string>
+    <string name="resolution">Resolution</string>
+    <string name="high_resolution">High resolution</string>
+    <string name="q_amp_a"><![CDATA[Q&A]]></string>
+    <string name="rate_us">Rate us</string>
+    <string name="feedback">Feed back</string>
+    <string name="share">Share</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="term_amp_condition"><![CDATA[Term & Condition]]></string>
+    <string name="reports_bugs_and_tell_us_what_to_improve">Reports bugs and tell us what to improve</string>
+    <string name="share_with_your_friends">Share with your friends</string>
+</resources>
